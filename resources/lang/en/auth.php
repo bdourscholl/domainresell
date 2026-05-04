@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'login_title' => 'Login to Your Account',
+    'register_title' => 'Create an Account',
+    'forgot_title' => 'Forgot Password',
+    'forgot_description' => 'Enter your email to receive a password reset link.',
+    'reset_password' => 'Reset Password',
+    'email' => 'Email Address',
+    'password' => 'Password',
+    'name' => 'Full Name',
+    'confirm_password' => 'Confirm Password',
+    'new_password' => 'New Password',
+    'remember_me' => 'Remember Me',
+    'forgot_password' => 'Forgot Password?',
+    'login_button' => 'Login',
+    'register_button' => 'Create Account',
+    'reset_button' => 'Reset Password',
+    'send_reset_link' => 'Send Reset Link',
+    'no_account' => "Don't have an account?",
+    'register_now' => 'Register Now',
+    'have_account' => 'Already have an account?',
+    'login_now' => 'Login Now',
+    'back_to_login' => 'Back to Login',
+    'invalid_credentials' => 'Invalid email or password.',
+    'account_suspended' => 'Your account has been suspended.',
+    'registration_success' => 'Registration successful! Welcome!',
+];

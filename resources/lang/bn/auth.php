@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'login_title' => 'আপনার অ্যাকাউন্টে লগইন করুন',
+    'register_title' => 'একটি অ্যাকাউন্ট তৈরি করুন',
+    'forgot_title' => 'পাসওয়ার্ড ভুলে গেছেন',
+    'forgot_description' => 'পাসওয়ার্ড রিসেট লিঙ্ক পেতে আপনার ইমেইল দিন।',
+    'reset_password' => 'পাসওয়ার্ড রিসেট',
+    'email' => 'ইমেইল ঠিকানা',
+    'password' => 'পাসওয়ার্ড',
+    'name' => 'পূর্ণ নাম',
+    'confirm_password' => 'পাসওয়ার্ড নিশ্চিত করুন',
+    'new_password' => 'নতুন পাসওয়ার্ড',
+    'remember_me' => 'আমাকে মনে রাখুন',
+    'forgot_password' => 'পাসওয়ার্ড ভুলে গেছেন?',
+    'login_button' => 'লগইন',
+    'register_button' => 'অ্যাকাউন্ট তৈরি করুন',
+    'reset_button' => 'পাসওয়ার্ড রিসেট',
+    'send_reset_link' => 'রিসেট লিঙ্ক পাঠান',
+    'no_account' => 'অ্যাকাউন্ট নেই?',
+    'register_now' => 'এখনই রেজিস্টার করুন',
+    'have_account' => 'ইতিমধ্যে অ্যাকাউন্ট আছে?',
+    'login_now' => 'এখনই লগইন করুন',
+    'back_to_login' => 'লগইনে ফিরে যান',
+    'invalid_credentials' => 'ভুল ইমেইল বা পাসওয়ার্ড।',
+    'account_suspended' => 'আপনার অ্যাকাউন্ট স্থগিত করা হয়েছে।',
+    'registration_success' => 'রেজিস্ট্রেশন সফল! স্বাগতম!',
+];
