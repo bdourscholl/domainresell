@@ -21,10 +21,11 @@
                     </div>
                     <div class="result-price">
                         <?php if ($result['available']): ?>
-                            <span class="price"><?= format_currency($result['price']) ?>/yr</span>
+                            <span class="price"><?= format_currency((float) $result['register_price']) ?>/yr</span>
                             <form action="/cart/add" method="POST" class="inline-form">
                                 <?= csrf_field() ?>
-                                <input type="hidden" name="domain" value="<?= e($result['sld']) ?>">
+                                <?php $parts = explode('.', $result['domain'], 2); ?>
+                                <input type="hidden" name="domain" value="<?= e($parts[0]) ?>">
                                 <input type="hidden" name="tld" value="<?= e($result['tld']) ?>">
                                 <input type="hidden" name="type" value="register">
                                 <input type="hidden" name="years" value="1">

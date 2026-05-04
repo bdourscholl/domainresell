@@ -3,7 +3,7 @@ USE domain_reseller;
 
 -- Default Admin User (password: admin123 - CHANGE THIS!)
 INSERT INTO users (name, email, password, role, status, email_verified_at) VALUES
-('Admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin', 'active', NOW());
+('Admin', 'admin@example.com', '$2y$10$UW5d8WaXiMfyQApDKa5t/uVyfPM9EqtPYgFaeiWREV/3o33TB68zu', 'admin', 'active', NOW());
 
 -- Create wallet for admin
 INSERT INTO wallets (user_id, balance) VALUES (1, 0.00);

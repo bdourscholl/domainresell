@@ -7,9 +7,16 @@ namespace App\Core;
 class Validator
 {
     private array $errors = [];
+    private array $data = [];
 
-    public function validate(array $data, array $rules): bool
+    public function __construct(array $data = [])
     {
+        $this->data = $data;
+    }
+
+    public function validate(array $rules): bool
+    {
+        $data = $this->data;
         $this->errors = [];
 
         foreach ($rules as $field => $ruleSet) {
@@ -40,9 +47,17 @@ class Validator
         return $this->errors;
     }
 
-    public function getFirstError(string $field): ?string
+    public function getFirstError(?string $field = null): ?string
     {
-        return $this->errors[$field][0] ?? null;
+        if ($field !== null) {
+            return $this->errors[$field][0] ?? null;
+        }
+        foreach ($this->errors as $fieldErrors) {
+            if (!empty($fieldErrors)) {
+                return $fieldErrors[0];
+            }
+        }
+        return null;
     }
 
     private function addError(string $field, string $message): void

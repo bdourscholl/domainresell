@@ -24,6 +24,11 @@ class EmailService
         $mail = new PHPMailer(true);
 
         try {
+            if (empty($this->config['username']) || empty($this->config['password'])) {
+                Logger::info('Email skipped (SMTP not configured): ' . $to);
+                return false;
+            }
+
             $mail->isSMTP();
             $mail->Host = $this->config['host'];
             $mail->Port = (int) $this->config['port'];
@@ -31,6 +36,7 @@ class EmailService
             $mail->Username = $this->config['username'];
             $mail->Password = $this->config['password'];
             $mail->SMTPSecure = $this->config['encryption'] ?? 'tls';
+            $mail->Timeout = 5;
             $mail->CharSet = 'UTF-8';
 
             $mail->setFrom($this->config['from_address'], $this->config['from_name']);

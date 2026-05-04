@@ -34,9 +34,9 @@ class View
         return $content;
     }
 
-    public static function renderWithLayout(string $template, array $data = [], string $layout = 'main'): string
+    public static function renderWithLayout(string $template, array $data = [], string $layout = 'main'): Response
     {
-        return self::render($template, $data, $layout);
+        return Response::html(self::render($template, $data, $layout));
     }
 
     private static function renderTemplate(string $template, array $data): string
