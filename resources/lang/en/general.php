@@ -30,4 +30,8 @@ return [
     'recent_orders' => 'Recent Orders',
     'welcome' => 'Welcome',
     'site_name' => 'Domain Reseller',
+    'toggle_theme' => 'Toggle theme',
+    'theme_light' => 'Light',
+    'theme_dark' => 'Dark',
+    'theme_system' => 'System',
 ];

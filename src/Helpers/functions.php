@@ -130,6 +130,22 @@ function current_user_role(): ?string
     return $session->getUserRole();
 }
 
+function current_user(): ?array
+{
+    static $cache = null;
+    static $cachedId = null;
+    $id = current_user_id();
+    if (!$id) return null;
+    if ($cache !== null && $cachedId === $id) return $cache;
+    try {
+        $cache = \App\Models\User::find($id);
+        $cachedId = $id;
+    } catch (\Throwable $e) {
+        $cache = null;
+    }
+    return $cache;
+}
+
 function is_admin(): bool
 {
     return in_array(current_user_role(), ['admin', 'moderator'], true);

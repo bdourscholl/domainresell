@@ -39,6 +39,8 @@ CREATE TABLE users (
     reset_token_expires TIMESTAMP NULL,
     last_login_at TIMESTAMP NULL,
     last_login_ip VARCHAR(45) NULL,
+    theme_preference ENUM('light', 'dark', 'system') NOT NULL DEFAULT 'system',
+    locale VARCHAR(10) NOT NULL DEFAULT 'en',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     INDEX idx_email (email),
@@ -623,3 +625,13 @@ CREATE TABLE activity_logs (
     INDEX idx_action (action),
     INDEX idx_created_at (created_at)
 ) ENGINE=InnoDB;
+
+-- ============================================
+-- Migrations for existing installations
+-- (Safe to run on a fresh schema; will no-op if column exists.)
+-- ============================================
+
+-- Add theme_preference column to users (added 2026-05)
+-- Run this only if upgrading from a pre-dark-mode install:
+--   ALTER TABLE users ADD COLUMN theme_preference ENUM('light','dark','system') NOT NULL DEFAULT 'system';
+--   ALTER TABLE users ADD COLUMN locale VARCHAR(10) NOT NULL DEFAULT 'en';

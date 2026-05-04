@@ -13,6 +13,10 @@
                 <a href="/login">Login</a>
                 <a href="/register" class="btn btn-primary btn-sm">Register</a>
             <?php endif; ?>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
+                <i class="fas fa-sun icon-sun"></i>
+                <i class="fas fa-moon icon-moon"></i>
+            </button>
         </div>
     </div>
 </nav>

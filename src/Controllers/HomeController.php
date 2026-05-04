@@ -6,6 +6,7 @@ namespace App\Controllers;
 
 use App\Core\Request;
 use App\Core\Response;
+use App\Core\Session;
 use App\Core\View;
 use App\Services\DomainSearchService;
 use App\Services\HomepageService;
@@ -50,8 +51,11 @@ class HomeController
 
     public function setLocale(Request $request): Response
     {
-        $locale = $request->get('locale', 'en');
-        $session = $request->getSession();
+        $locale = $request->param('locale') ?? $request->get('locale', 'en');
+        if (!in_array($locale, ['en', 'bn'], true)) {
+            $locale = 'en';
+        }
+        $session = new Session();
         $session->setLocale($locale);
 
         $referer = $_SERVER['HTTP_REFERER'] ?? '/';

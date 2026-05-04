@@ -30,4 +30,8 @@ return [
     'recent_orders' => 'সাম্প্রতিক অর্ডার',
     'welcome' => 'স্বাগতম',
     'site_name' => 'ডোমেইন রিসেলার',
+    'toggle_theme' => 'থিম পরিবর্তন',
+    'theme_light' => 'হালকা',
+    'theme_dark' => 'গাঢ়',
+    'theme_system' => 'সিস্টেম',
 ];
