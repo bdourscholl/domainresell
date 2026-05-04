@@ -104,4 +104,26 @@ class AccountController
         flash('success', 'Password changed successfully.');
         return Response::redirect('/account/profile');
     }
+
+    public function setTheme(Request $request): Response
+    {
+        $theme = $request->post('theme');
+        if (!$theme) {
+            $body = json_decode($request->getBody(), true);
+            $theme = is_array($body) ? ($body['theme'] ?? null) : null;
+        }
+        if (!in_array($theme, ['light', 'dark', 'system'], true)) {
+            return Response::json(['success' => false, 'error' => 'invalid theme'], 400);
+        }
+        $userId = current_user_id();
+        if ($userId) {
+            try {
+                User::update($userId, ['theme_preference' => $theme]);
+            } catch (\Throwable $e) {
+                return Response::json(['success' => true, 'persisted' => false]);
+            }
+            return Response::json(['success' => true, 'persisted' => true, 'theme' => $theme]);
+        }
+        return Response::json(['success' => true, 'persisted' => false, 'theme' => $theme]);
+    }
 }

@@ -15,12 +15,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Active sidebar link
     var currentPath = window.location.pathname;
+    var bestMatch = null;
+    var bestLen = -1;
     document.querySelectorAll('.sidebar-link').forEach(function(link) {
-        if (link.getAttribute('href') === currentPath) {
-            link.style.background = '#334155';
-            link.style.color = '#fff';
+        var href = link.getAttribute('href');
+        if (!href) return;
+        if (href === currentPath || (href !== '/admin' && currentPath.indexOf(href) === 0)) {
+            if (href.length > bestLen) {
+                bestLen = href.length;
+                bestMatch = link;
+            }
         }
     });
+    if (bestMatch) bestMatch.classList.add('active');
 
     // Confirm delete actions
     document.querySelectorAll('form').forEach(function(form) {

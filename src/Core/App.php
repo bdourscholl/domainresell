@@ -165,6 +165,9 @@ class App
         // Language switch
         $this->router->get('/lang/{locale}', 'HomeController@setLocale');
 
+        // Theme preference (works for guests too — guests get success but no persistence)
+        $this->router->post('/api/account/theme', 'AccountController@setTheme');
+
         // ── Admin Routes ──
         $this->router->get('/admin', 'Admin\\DashboardController@index', ['auth', 'admin']);
         $this->router->get('/admin/homepage', 'Admin\\HomepageController@index', ['auth', 'admin']);

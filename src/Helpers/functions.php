@@ -79,6 +79,17 @@ function __(string $key, array $replace = []): string
     return $text;
 }
 
+/**
+ * Translate a key, returning null if the key is missing (so callers can
+ * fall back via the `??` operator). `__()` returns the raw key on miss
+ * which makes it awkward to use as a fallback chain.
+ */
+function tt(string $key, array $replace = []): ?string
+{
+    $text = __($key, $replace);
+    return $text === $key ? null : $text;
+}
+
 function setting(string $key, string $default = ''): string
 {
     try {
@@ -128,6 +139,22 @@ function current_user_role(): ?string
 {
     $session = new Session();
     return $session->getUserRole();
+}
+
+function current_user(): ?array
+{
+    static $cache = null;
+    static $cachedId = null;
+    $id = current_user_id();
+    if (!$id) return null;
+    if ($cache !== null && $cachedId === $id) return $cache;
+    try {
+        $cache = \App\Models\User::find($id);
+        $cachedId = $id;
+    } catch (\Throwable $e) {
+        $cache = null;
+    }
+    return $cache;
 }
 
 function is_admin(): bool

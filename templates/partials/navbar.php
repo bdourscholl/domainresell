@@ -17,6 +17,10 @@
                 <a href="/register" class="btn btn-primary btn-sm"><?= __('general.register') ?></a>
             <?php endif; ?>
             <?= partial('lang-switcher') ?>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="<?= __('general.toggle_theme') ?: 'Toggle theme' ?>" title="<?= __('general.toggle_theme') ?: 'Toggle theme' ?>">
+                <i class="fas fa-sun icon-sun"></i>
+                <i class="fas fa-moon icon-moon"></i>
+            </button>
         </div>
     </div>
 </nav>
