@@ -11,6 +11,8 @@ foreach ($sections as $s) {
 
 <?= partial('homepage-stats', ['stats' => $stats ?? []]) ?>
 
+<?= partial('homepage-products') ?>
+
 <?= partial('homepage-pricing', [
     'featured_tlds' => $featured_tlds ?? [],
     'pricing_section' => $sectionMap['pricing'] ?? [],

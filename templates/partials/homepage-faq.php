@@ -1,7 +1,15 @@
+<?php
+    $eyebrow = tt('home.faq_eyebrow') ?? 'GOT QUESTIONS?';
+    $title = tt('home.faq_title') ?? $faq_section['section_title'] ?? 'Everything you wanted to ask';
+    $subtitle = tt('home.faq_subtitle') ?? 'Quick answers about registration, transfers, payments, and more.';
+?>
 <section class="faq-section">
     <div class="container">
-        <h2 class="section-title"><?= e($faq_section['section_title'] ?? 'Frequently Asked Questions') ?></h2>
-        <p class="section-subtitle">Quick answers to common questions about our domain services</p>
+        <div class="section-head">
+            <span class="section-eyebrow"><?= e($eyebrow) ?></span>
+            <h2 class="section-title"><?= e($title) ?></h2>
+            <p class="section-subtitle"><?= e($subtitle) ?></p>
+        </div>
         <div class="faq-accordion">
             <div class="faq-item reveal">
                 <button class="faq-question">How do I register a domain? <i class="fas fa-chevron-down"></i></button>

@@ -142,6 +142,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Register / Transfer mode toggle in hero
+    var modeButtons = document.querySelectorAll('.search-mode-toggle .search-mode');
+    var modeInput = document.getElementById('searchModeInput');
+    var heroForm = document.getElementById('domainSearchForm');
+    if (modeButtons.length && heroForm) {
+        modeButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var mode = btn.getAttribute('data-search-mode') || 'register';
+                modeButtons.forEach(function (b) {
+                    var active = b === btn;
+                    b.classList.toggle('is-active', active);
+                    b.setAttribute('aria-selected', active ? 'true' : 'false');
+                });
+                if (modeInput) modeInput.value = mode;
+                heroForm.setAttribute('action', mode === 'transfer' ? '/transfer' : '/search');
+                var inputEl = heroForm.querySelector('.search-input');
+                if (inputEl) {
+                    inputEl.setAttribute('placeholder', mode === 'transfer'
+                        ? (inputEl.dataset.placeholderTransfer || 'Enter the domain you want to transfer...')
+                        : (inputEl.dataset.placeholderRegister || inputEl.getAttribute('placeholder')));
+                }
+            });
+        });
+        var heroInput = heroForm.querySelector('.search-input');
+        if (heroInput && !heroInput.dataset.placeholderRegister) {
+            heroInput.dataset.placeholderRegister = heroInput.getAttribute('placeholder');
+        }
+    }
+
     // ========================================
     // Cart add via AJAX
     // ========================================

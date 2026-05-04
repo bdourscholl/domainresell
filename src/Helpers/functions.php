@@ -79,6 +79,17 @@ function __(string $key, array $replace = []): string
     return $text;
 }
 
+/**
+ * Translate a key, returning null if the key is missing (so callers can
+ * fall back via the `??` operator). `__()` returns the raw key on miss
+ * which makes it awkward to use as a fallback chain.
+ */
+function tt(string $key, array $replace = []): ?string
+{
+    $text = __($key, $replace);
+    return $text === $key ? null : $text;
+}
+
 function setting(string $key, string $default = ''): string
 {
     try {

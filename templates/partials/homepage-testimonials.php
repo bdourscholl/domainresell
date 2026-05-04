@@ -1,7 +1,15 @@
+<?php
+    $eyebrow = tt('home.testimonials_eyebrow') ?? 'TRUSTED BY';
+    $title = tt('home.testimonials_title') ?? $testimonials_section['section_title'] ?? 'Loved by founders across Bangladesh';
+    $subtitle = tt('home.testimonials_subtitle') ?? 'Stories from teams that ship faster with us.';
+?>
 <section class="testimonials-section">
     <div class="container">
-        <h2 class="section-title"><?= e($testimonials_section['section_title'] ?? 'What Our Customers Say') ?></h2>
-        <p class="section-subtitle">Trusted by thousands of businesses and individuals worldwide</p>
+        <div class="section-head">
+            <span class="section-eyebrow"><?= e($eyebrow) ?></span>
+            <h2 class="section-title"><?= e($title) ?></h2>
+            <p class="section-subtitle"><?= e($subtitle) ?></p>
+        </div>
         <div class="testimonials-grid">
             <div class="testimonial-card reveal">
                 <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -28,8 +36,9 @@
 <!-- CTA Section -->
 <section class="cta-section">
     <div class="container">
-        <h2>Ready to Get Started?</h2>
-        <p>Register your perfect domain today and take your business online</p>
-        <a href="/register" class="btn">Create Free Account</a>
+        <span class="section-eyebrow cta-eyebrow"><?= e(tt('home.cta_eyebrow') ?? 'BLAST OFF') ?></span>
+        <h2><?= e(tt('home.cta_title') ?? 'Your domain odyssey starts here') ?></h2>
+        <p><?= e(tt('home.cta_subtitle') ?? 'Create a free account and grab your domain in seconds.') ?></p>
+        <a href="/register" class="btn btn-cta"><?= e(tt('home.cta_button') ?? 'Create Free Account') ?> <i class="fas fa-arrow-right"></i></a>
     </div>
 </section>

@@ -1,7 +1,15 @@
+<?php
+    $eyebrow = tt('home.features_eyebrow') ?? 'WHY DOMAIN RESELLER';
+    $title = tt('home.features_title') ?? $features_section['section_title'] ?? 'Built for serious domain operators';
+    $subtitle = tt('home.features_subtitle') ?? 'Everything you need to manage thousands of domains, with the polish of a global registrar.';
+?>
 <section class="features-section">
     <div class="container">
-        <h2 class="section-title"><?= e($features_section['section_title'] ?? 'Why Choose Us') ?></h2>
-        <p class="section-subtitle">Everything you need to manage your domains in one powerful platform</p>
+        <div class="section-head">
+            <span class="section-eyebrow"><?= e($eyebrow) ?></span>
+            <h2 class="section-title"><?= e($title) ?></h2>
+            <p class="section-subtitle"><?= e($subtitle) ?></p>
+        </div>
         <div class="features-grid">
             <div class="feature-card reveal">
                 <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
@@ -20,8 +28,8 @@
             </div>
             <div class="feature-card reveal reveal-delay-3">
                 <div class="feature-icon"><i class="fas fa-headset"></i></div>
-                <h3>Support</h3>
-                <p>24/7 ticket system with instant Telegram and WhatsApp alerts. Get help anytime, anywhere you need it.</p>
+                <h3>24/7 Support</h3>
+                <p>Tickets backed by instant Telegram and WhatsApp alerts. Get help in Bangla or English, day or night.</p>
             </div>
         </div>
     </div>
