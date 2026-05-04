@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'dashboard' => 'ড্যাশবোর্ড',
+    'customers' => 'গ্রাহক',
+    'domains' => 'ডোমেইন',
+    'orders' => 'অর্ডার',
+    'settings' => 'সেটিংস',
+    'homepage' => 'হোমপেজ',
+    'pricing' => 'TLD মূল্য',
+    'coupons' => 'কুপন',
+    'tickets' => 'টিকেট',
+    'themes' => 'থিম',
+    'appearance' => 'ডিজাইন',
+    'payments' => 'পেমেন্ট গেটওয়ে',
+    'registrars' => 'রেজিস্ট্রার',
+    'notifications' => 'নোটিফিকেশন',
+    'moderators' => 'মডারেটর',
+    'languages' => 'ভাষা',
+    'announcements' => 'ঘোষণা',
+    'wallet' => 'ওয়ালেট',
+    'affiliates' => 'অ্যাফিলিয়েট',
+    'email_templates' => 'ইমেইল টেমপ্লেট',
+    'seo' => 'SEO সেটিংস',
+    'verifications' => 'যাচাইকরণ',
+];

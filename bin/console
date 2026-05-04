@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+define('BASE_PATH', dirname(__DIR__));
+
+require BASE_PATH . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+use App\Console\Kernel;
+
+$dotenv = Dotenv::createImmutable(BASE_PATH);
+$dotenv->safeLoad();
+
+$kernel = new Kernel();
+$command = $argv[1] ?? null;
+
+if (!$command) {
+    echo "Usage: php bin/console <command>\n\n";
+    echo "Available commands:\n";
+    foreach ($kernel->getCommands() as $name => $description) {
+        echo "  {$name}\t\t{$description}\n";
+    }
+    exit(1);
+}
+
+$exitCode = $kernel->handle($command, array_slice($argv, 2));
+exit($exitCode);

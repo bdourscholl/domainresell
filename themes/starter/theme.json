@@ -1,0 +1,9 @@
+{
+    "name": "Starter",
+    "slug": "starter",
+    "version": "1.0.0",
+    "author": "Domain Reseller",
+    "description": "A minimal starter theme for customization",
+    "type": "homepage",
+    "sections": ["hero", "pricing"]
+}

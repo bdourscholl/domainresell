@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'dashboard' => 'Dashboard',
+    'customers' => 'Customers',
+    'domains' => 'Domains',
+    'orders' => 'Orders',
+    'settings' => 'Settings',
+    'homepage' => 'Homepage',
+    'pricing' => 'TLD Pricing',
+    'coupons' => 'Coupons',
+    'tickets' => 'Tickets',
+    'themes' => 'Themes',
+    'appearance' => 'Appearance',
+    'payments' => 'Payment Gateways',
+    'registrars' => 'Registrars',
+    'notifications' => 'Notifications',
+    'moderators' => 'Moderators',
+    'languages' => 'Languages',
+    'announcements' => 'Announcements',
+    'wallet' => 'Wallet',
+    'affiliates' => 'Affiliates',
+    'email_templates' => 'Email Templates',
+    'seo' => 'SEO Settings',
+    'verifications' => 'Verifications',
+];

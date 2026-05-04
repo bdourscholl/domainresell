@@ -1,0 +1,9 @@
+{
+    "name": "Default",
+    "slug": "default",
+    "version": "1.0.0",
+    "author": "Domain Reseller",
+    "description": "Default built-in theme with all homepage sections and account pages",
+    "type": "both",
+    "sections": ["hero", "stats", "pricing", "features", "faq", "testimonials"]
+}
